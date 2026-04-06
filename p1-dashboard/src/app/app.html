@@ -1,0 +1,71 @@
+<div class="dashboard">
+  <!-- Header -->
+  <header class="header">
+    <h1>⚡ HomeWizard</h1>
+    <span class="badge" [class.online]="data">{{ data ? 'Live' : 'Connecting...' }}</span>
+  </header>
+
+  <!-- Top cards -->
+  <div class="cards">
+    <div class="card accent">
+      <span class="card-label">Active Power</span>
+      <span class="card-value big">{{ data?.active_power_w ?? '--' }}<small>W</small></span>
+    </div>
+    <div class="card">
+      <span class="card-label">Import</span>
+      <span class="card-value">{{ data?.total_power_import_kwh ?? '--' }}<small>kWh</small></span>
+    </div>
+    <div class="card">
+      <span class="card-label">Export</span>
+      <span class="card-value">{{ data?.total_power_export_kwh ?? '--' }}<small>kWh</small></span>
+    </div>
+    <div class="card">
+      <span class="card-label">Gas</span>
+      <span class="card-value">{{ data?.total_gas_m3 ?? '--' }}<small>m³</small></span>
+    </div>
+  </div>
+
+  <!-- Power history chart -->
+  <section class="chart-section">
+    <h2>Power History</h2>
+    <div class="chart-container wide">
+      <canvas #powerCanvas></canvas>
+    </div>
+  </section>
+
+  <!-- Phase section -->
+  <div class="phase-row">
+    <!-- Phase doughnut -->
+    <section class="chart-section narrow">
+      <h2>Phase Distribution</h2>
+      <div class="chart-container square">
+        <canvas #phaseCanvas></canvas>
+      </div>
+    </section>
+
+    <!-- Phase details -->
+    <section class="chart-section phase-details">
+      <h2>Per Phase</h2>
+      <div class="phase-cards">
+        <div class="phase-card l1">
+          <h3>L1</h3>
+          <p class="phase-power">{{ data?.active_power_l1_w ?? '--' }} <small>W</small></p>
+          <p>{{ data?.active_voltage_l1_v ?? '--' }} V</p>
+          <p>{{ data?.active_current_l1_a ?? '--' }} A</p>
+        </div>
+        <div class="phase-card l2">
+          <h3>L2</h3>
+          <p class="phase-power">{{ data?.active_power_l2_w ?? '--' }} <small>W</small></p>
+          <p>{{ data?.active_voltage_l2_v ?? '--' }} V</p>
+          <p>{{ data?.active_current_l2_a ?? '--' }} A</p>
+        </div>
+        <div class="phase-card l3">
+          <h3>L3</h3>
+          <p class="phase-power">{{ data?.active_power_l3_w ?? '--' }} <small>W</small></p>
+          <p>{{ data?.active_voltage_l3_v ?? '--' }} V</p>
+          <p>{{ data?.active_current_l3_a ?? '--' }} A</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
