@@ -49,20 +49,20 @@
       <div class="phase-cards">
         <div class="phase-card l1">
           <h3>L1</h3>
-          <p class="phase-power">{{ data?.active_current_l1_a ?? '--' }} <small>A</small></p>
           <p class="phase-power">{{ data?.active_power_l1_w ?? '--' }} <small>W</small></p>
+          <p class="phase-amps">{{ data?.active_current_l1_a ?? '--' }} <small>A</small></p>
           <p>{{ data?.active_voltage_l1_v ?? '--' }} V</p>
         </div>
         <div class="phase-card l2">
           <h3>L2</h3>
-          <p class="phase-power">{{ data?.active_current_l2_a ?? '--' }} <small>A</small></p>
           <p class="phase-power">{{ data?.active_power_l2_w ?? '--' }} <small>W</small></p>
+          <p class="phase-amps">{{ data?.active_current_l2_a ?? '--' }} <small>A</small></p>
           <p>{{ data?.active_voltage_l2_v ?? '--' }} V</p>
         </div>
         <div class="phase-card l3">
           <h3>L3</h3>
-          <p class="phase-power">{{ data?.active_current_l3_a ?? '--' }} <small>A</small></p>
           <p class="phase-power">{{ data?.active_power_l3_w ?? '--' }} <small>W</small></p>
+          <p class="phase-amps">{{ data?.active_current_l3_a ?? '--' }} <small>A</small></p>
           <p>{{ data?.active_voltage_l3_v ?? '--' }} V</p>
         </div>
       </div>
